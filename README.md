@@ -1,4 +1,4 @@
-# 🌊 sea
+# Sea
 
 I think it's about time we started writing some esoteric static site generators.
 
