@@ -12,10 +12,11 @@ Paths are mapped to the project file system, as one might expect.
 Paths can contain wildcards, simple matching expressions and query parameters.
 Query parameters are used to process input files.
 
-Here's the simplest kind of sea site...
+Here's the simplest kind of `Seafile`...
 
 ```
-/(.*) /$1.md?md
+build:
+  /(.*) /$1.md?md
 ```
 
 This site maps all routes to the markdown files in the root
