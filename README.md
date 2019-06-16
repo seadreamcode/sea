@@ -1,24 +1,26 @@
-# Sea
+Sea
+===
 
-I think it's about time we started writing some esoteric static site generators.
+Sea is a minimal static site generator. It takes a single CSV file
+and outputs HTML files. That's it.
 
-## Overview
-Sea is a tiny DSL for describing static sites. The language is based around
-the idea of URL re-writes. Each line in a sea source file contains 2 paths.
-The two paths are separated by a single space and first path will be replaced
-by the second.
+## Format
+The input file must be a CSV (comma-separated), using double quotes and
+each line must have 8 columns.
 
-Paths are mapped to the project file system, as one might expect.
-Paths can contain wildcards, simple matching expressions and query parameters.
-Query parameters are used to process input files.
+* Title
+* Description
+* Author
+* Slug
+* Permalink
+* Timestamp
+* Content
+* Misc (json-encoded array)
 
-Here's the simplest kind of `Seafile`...
+By default, content will be parsed as a markdown file. Options like this
+can be changed within the *misc* column.
 
+## Usage
+```sh
+$ sea mywebsite.csv
 ```
-build:
-  /(.*) /$1.md?md
-```
-
-This site maps all routes to the markdown files in the root
-of the project directory. The `md` query parameter compiles the
-input files from markdown into html.
